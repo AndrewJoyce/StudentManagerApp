@@ -1,35 +1,44 @@
 package ie.gmit.studentmanager;
+import java.util.ArrayList;
 
 public class StudentManager {
-	//set initial capacity constant for the array. Before you create
-	//array you need to know the size.
-	private static final int INITIAL_CAPACITY = 10;
-	//creates array to hold student objects
-	private Student[] students = null;
-	//constructor - instantiate students array
+	
+	List<Student> students;
+	
 	public StudentManager() {
-		students = new Student[INITIAL_CAPACITY];
+		students = new ArrayList<Student>();
 		}
-	//creates method you may need to stub them out
-	//stub meaning a mock implementation
-	//checks if student added
+	
 	public boolean addStudent(Student student) {
-		return false;
+		try {
+			return students.add(student);
+		}catch(Exception error) {
+			error.printStackTrace();
+			return false;
+		}
 	}
-	//checks for student id
+	
 	public boolean deleteStudent(String studentId) {
-		return false;
+		Student student = getStudentById(studentId);
+		if(student ! = null) {
+			return students.remove(student);
+		}else {
+			return false;
+		}
 	}
-	//finds students by first name 
-	public Student[] getStudentByFirstName(String firstName) {
+	
+	public Student getStudentById(String studentId) {
+		for(Students student: students) {
+			if(student.getStudentId().equals(studentId)) {
+				return student;
+			}
+		}
 		return null;
-	}
-	//total number of students in array
-	public int findTotalStudents() {
-		return -1;
 	}
 	
 }
 
-// test git commit repo
+
+
+
 

@@ -1,10 +1,24 @@
 package ie.gmit.studentmanager;
+import java.util;
+import java.util.Scanner;
 
 public class Menu {
-	//create a start method which display a menu option to user
+	private Scanner userInput;
+	private StudentManager stMan;
+	private boolean keepRun = true;
+	
 	public void start() {
-		System.out.println("This is the menu of options:");
+		userInput = new Scanner(System.in);
+		stMan = new StudentManager();
+		
+		while(keppRun) {
+			//menu options here
+			
+			int userMenuOption = userInput.nextInt(); // unprotected code
+		}
 	}
+	
+	
 
 }
 
